@@ -413,7 +413,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
         <div className={styles.container}>
           <div className={styles.horizontalcontainer}>
             <div className={styles.smallcontainer}>
-              <h2   className={styles.h2text}>Perks of minting pixie token</h2>
+              <h2   className={styles.h2text}>Perks of owning a pixie token</h2>
               <p  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</p>
             </div>
             <div className={styles.smallcontainer}>
