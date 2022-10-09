@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Courier New", Courier, monospace;
-  
+  gap: 50px;
   background-color: white;
 }
 
@@ -18,18 +18,14 @@
   align-items: center;
   color: black;
 }
-
 .image {
-  width: 40%;
-  height: 30%;
-  margin-left: 50%;
+  width: 30%;
+  height: 20%;
 }
 
 .title {
   font-size: 2rem;
-  margin: 2rem 0;
   color: black;
-  margin-left: 30%;
 }
 
 .description {
@@ -37,7 +33,6 @@
   margin: 2rem 0;
   font-size: 1.2rem;
   color: black;
-  margin-left: 30%;
 }
 
 .button {
@@ -50,13 +45,24 @@
   width: 200px;
   cursor: pointer;
   margin-bottom: 2%;
-  margin-left: 30%;
+}.flex_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 1000px) {
   .main {
     width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 5%;
+  }.image {
+    width: 50%;
+    height: 50%;
+    margin-left: 5%;
   }
+  
 }
