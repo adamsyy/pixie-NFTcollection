@@ -79,6 +79,110 @@ color: gray;
 
 .test{
   background-color: white;
-color: pink
+color: black
 
+
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.sectionbottommarginwfsection{
+  padding-bottom: 140px;
+}
+
+   
+.horizontalcontainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  grid-column-gap: 20px;
+}
+
+   
+.smallcontainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 480px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  grid-row-gap: 16px;
+}
+
+.h2text{
+
+  z-index: 100;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Poppins, sans-serif;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 600;
+}
+
+.textsmall1{
+  z-index: 100;
+  margin-bottom: 0px;
+  color: #49535c;
+  font-family: "Open Sans", sans-serif; 
+}
+.textsmall{
+
+    z-index: 100;
+    margin-bottom: 0px;
+    color: #49535c;
+  
+}
+.maingridfeature{
+  justify-items: start;
+  grid-column-gap: 12px;
+  grid-row-gap: 4px;
+  -ms-grid-columns: -webkit-max-content 1fr;
+  -ms-grid-columns: max-content 1fr;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+}
+.boldtext{
+  position: relative;
+  z-index: 100;
+  margin-bottom: 0px;
+  color: #17191b;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }

@@ -405,9 +405,40 @@ const isMinted = await contract.isMintedcheck(address_of_user);
       </div>
 
 
+<div className={styles.test}>
 
 
 
+<div className={styles.sectionbottommarginwfsection}>
+        <div className={styles.container}>
+          <div className={styles.horizontalcontainer}>
+            <div className={styles.smallcontainer}>
+              <h2   className={styles.h2text}>Perks of minting pixie token</h2>
+              <p  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</p>
+            </div>
+            <div className={styles.smallcontainer}>
+              <div className={styles.maingridfeature}><p className={styles.boldtext}>✨ 1-1 Mentorship</p>
+                <p  className={styles.textsmall}>Get support from mentors from various fields including tech, marketing,designing etc</p>
+              </div>
+              <div  className={styles.maingridfeature}>
+                <p className={styles.boldtext}>✨Resume Reviews</p>
+                <p  className={styles.textsmall}>Get your resume reviewed by professionals in the field.</p>
+              </div>
+              <div  className={styles.maingridfeature}>
+                <p className={styles.boldtext}>✨Pre access to our events</p>
+                <p  className={styles.textsmall}>At TinkerHub we conduct both offline and online events, being an owner of the nft gives you early access to the events</p>
+              </div>
+            </div>
+          </div>
+          <div style={{paddingTop: '50px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center'}}>
+          </div>
+        </div>
+      </div>
+
+
+
+
+</div>
 
 
 
