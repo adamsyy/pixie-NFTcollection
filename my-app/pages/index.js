@@ -67,12 +67,12 @@ const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
 //get the current account address
 // const account = await signer.getAddress();
 
-// const isMinted = await contract.isMintedcheck(account);
+const isMinted = await contract.isMintedcheck(account);
 
-//     if (isMinted) {
-//       alert("You have already minted an NFT");
-//       return;
-//     }
+    if (isMinted) {
+      alert("You have already minted an NFT");
+      return;
+    }
     try {
 
 // 
