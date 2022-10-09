@@ -353,7 +353,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <div>
+        <div  className={styles.fex_left}>
           <h1 className={styles.title}>Pixie Tokens!</h1>
           <div className={styles.description}>
             Get exclsive perks by minting the pixie NFTs
@@ -363,9 +363,7 @@ export default function Home() {
           </div>
           {renderButton()}
         </div>
-        <div>
           <img className={styles.image} src="./mascot4.png " />
-        </div>
       </div>
 
       <footer className={styles.footer}>
