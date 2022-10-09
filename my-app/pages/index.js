@@ -271,6 +271,7 @@ const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
     const signer = web3Provider.getSigner();
     const address = await signer.getAddress();
     setAddressOfUser(address);
+    console.log("address", address);
 
     if (needSigner) {
       const signer = web3Provider.getSigner();
