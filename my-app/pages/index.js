@@ -18,6 +18,7 @@ export default function Home() {
   const [isOwner, setIsOwner] = useState(false);
   // tokenIdsMinted keeps track of the number of tokenIds that have been minted
   const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
+  const [address_of_user, setAddressOfUser] = useState("");
   // Create a reference to the Web3 Modal (used for connecting to Metamask) which persists as long as the page is open
   const web3ModalRef = useRef();
 
@@ -107,6 +108,7 @@ const isMinted = await contract.isMintedcheck(account);
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
       await getProviderOrSigner();
+      setAddressOfUser(await getProviderOrSigner().getAddress());
       setWalletConnected(true);
     } catch (err) {
       console.error(err);
