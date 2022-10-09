@@ -61,7 +61,7 @@ export default function Home() {
    * publicMint: Mint an NFT after the presale
    */
   const publicMint = async () => {
-    const signer = await getProviderOrSigner(true);
+    const signer = await getProviderOrSigner(false);
 const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
 //get the current account address
 const account = await signer.getAddress();
