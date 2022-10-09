@@ -354,9 +354,9 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 className={styles.title}>Welcome to Crypto Devs!</h1>
+          <h1 className={styles.title}>Pixie Tokens!</h1>
           <div className={styles.description}>
-            Its an NFT collection for developers in Crypto.
+            Get exclsive perks by minting the pixie NFTs
           </div>
           <div className={styles.description}>
             {tokenIdsMinted}/20 have been minted
@@ -364,12 +364,13 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src="./cryptodevs/0.svg" />
+          <img className={styles.image} src="./mascot4.png " />
         </div>
       </div>
 
       <footer className={styles.footer}>
-        Made with &#10084; by Crypto Devs
+        Made with &#10084; 
+        by Tinkerhub MEC
       </footer>
     </div>
   );
