@@ -1,4 +1,12 @@
+
+.full{
+  background-color: white;
+
+
+}
+
 .main {
+  background-color: white;
   min-height: 90vh;
   display: flex;
   flex-direction: row;
@@ -13,19 +21,30 @@
   display: flex;
   padding: 2rem 0;
   background-color: lightyellow;
-  border-top: 1px solid #eaeaea;
+
   justify-content: center;
   align-items: center;
   color: black;
 }
+
+.explaintitle{
+  background-color: white;
+color: black;
+
+}
+
 .image {
   width: 30%;
-  height: 20%;
+  height: 30%;
+  margin-left: 40%;
 }
 
 .title {
   font-size: 2rem;
   color: black;
+  margin-left: 30%;
+
+  font-family: "Roboto", sans-serif;
 }
 
 .description {
@@ -33,23 +52,29 @@
   margin: 2rem 0;
   font-size: 1.2rem;
   color: black;
+  margin-left: 30%;
+  font-family: "Open Sans", sans-serif; 
+  white-space: nowrap;
+color: gray;
+  text-overflow: ellipsis;
+
+
 }
 
 .button {
-  border-radius: 4px;
-  background-color: yellow;
-  border: none;
+  border-radius: 14px;
+
+  background-color: #ff6b6c;
+  border: black;
   color: black;
   font-size: 15px;
   padding: 20px;
-  width: 200px;
+  width: 150px;
   cursor: pointer;
   margin-bottom: 2%;
-}.flex_left{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-left: 40%;
+
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
 }
 @media (max-width: 1000px) {
   .main {
@@ -57,12 +82,7 @@
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 5%;
-  }.image {
-    width: 50%;
-    height: 50%;
-    margin-left: 5%;
+    background-color: white;
   }
-  
 }
+

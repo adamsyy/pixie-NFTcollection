@@ -339,7 +339,7 @@ export default function Home() {
     if (presaleStarted && presaleEnded) {
       return (
         <button className={styles.button} onClick={publicMint}>
-          Public Mint 🚀
+          🚀
         </button>
       );
     }
@@ -356,7 +356,7 @@ export default function Home() {
         <div  className={styles.fex_left}>
           <h1 className={styles.title}>Pixie Tokens!</h1>
           <div className={styles.description}>
-            Get exclsive perks by minting the pixie NFTs
+            Get exclusive perks by minting the pixie NFTs
           </div>
           <div className={styles.description}>
             {tokenIdsMinted}/20 have been minted
@@ -366,10 +366,29 @@ export default function Home() {
           <img className={styles.image} src="./mascot4.png " />
       </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <footer className={styles.footer}>
         Made with &#10084; 
         by Tinkerhub MEC
       </footer>
+
+
+      
     </div>
   );
 }
