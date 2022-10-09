@@ -65,14 +65,14 @@ export default function Home() {
     const signer = await getProviderOrSigner(false);
 const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
 //get the current account address
-const account = await signer.getAddress();
+// const account = await signer.getAddress();
 
-const isMinted = await contract.isMintedcheck(account);
+// const isMinted = await contract.isMintedcheck(account);
 
-    if (isMinted) {
-      alert("You have already minted an NFT");
-      return;
-    }
+//     if (isMinted) {
+//       alert("You have already minted an NFT");
+//       return;
+//     }
     try {
 
 // 
@@ -262,10 +262,15 @@ const isMinted = await contract.isMintedcheck(account);
 
     // If user is not connected to the Goerli network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
+    //find address of connected wallet
+
     if (chainId !== 5) {
       window.alert("Change the network to Goerli");
       throw new Error("Change network to Goerli");
     }
+    const signer = web3Provider.getSigner();
+    const address = await signer.getAddress();
+    setAddressOfUser(address);
 
     if (needSigner) {
       const signer = web3Provider.getSigner();
@@ -288,6 +293,7 @@ const isMinted = await contract.isMintedcheck(account);
         disableInjectedProvider: false,
       });
       connectWallet();
+
 
       // Check if presale has started and ended
       const _presaleStarted = checkIfPresaleStarted();
