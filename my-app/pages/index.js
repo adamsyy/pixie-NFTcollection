@@ -386,6 +386,9 @@ const isMinted = await contract.isMintedcheck(address_of_user);
   return (
     <div>
       <Head>
+      <div class={styles.banner}>
+    <div><a href="#" class={styles.bannerlink}></a></div>
+  </div>
         <title>Crypto Devs</title>
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
@@ -447,11 +450,11 @@ const isMinted = await contract.isMintedcheck(address_of_user);
 
 
 
-
+{/* 
       <footer className={styles.footer}>
         Made with &#10084; 
         by Tinkerhub MEC
-      </footer>
+      </footer> */}
 
 
       
