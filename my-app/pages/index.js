@@ -108,7 +108,10 @@ const isMinted = await contract.isMintedcheck(account);
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
       await getProviderOrSigner();
-      setAddressOfUser(await getProviderOrSigner().getAddress());
+      //set the address of the user
+      const signer = await getProviderOrSigner(true);
+      const account = await signer.getAddress();
+      setAddressOfUser(account);
       setWalletConnected(true);
     } catch (err) {
       console.error(err);
