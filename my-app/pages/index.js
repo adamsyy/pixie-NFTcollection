@@ -109,9 +109,9 @@ const isMinted = await contract.isMintedcheck(account);
       // When used for the first time, it prompts the user to connect their wallet
       await getProviderOrSigner();
       //set the address of the user
-      const signer = await getProviderOrSigner(true);
-      const account = await signer.listAccounts()[0];
-      setAddressOfUser(account);
+      // const signer = await getProviderOrSigner();
+      // const account = await signer.listAccounts()[0];
+      // setAddressOfUser(account);
       setWalletConnected(true);
     } catch (err) {
       console.error(err);
