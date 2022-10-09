@@ -28,14 +28,7 @@ export default function Home() {
 
 
 //allow a user to mint nft only if isMinted state variable in the contract is false
-const signer = await getProviderOrSigner(true);
-const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-const isMinted = await contract.isMinted();
 
-    if (isMinted) {
-      alert("You have already minted an NFT");
-      return;
-    }
 
     try {
 
@@ -68,6 +61,17 @@ const isMinted = await contract.isMinted();
    * publicMint: Mint an NFT after the presale
    */
   const publicMint = async () => {
+    const signer = await getProviderOrSigner(true);
+const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
+//get the current account address
+const account = await signer.getAddress();
+
+const isMinted = await contract.isMintedcheck(account);
+
+    if (isMinted) {
+      alert("You have already minted an NFT");
+      return;
+    }
     try {
 
 // 
