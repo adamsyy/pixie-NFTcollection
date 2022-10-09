@@ -110,7 +110,7 @@ const isMinted = await contract.isMintedcheck(account);
       await getProviderOrSigner();
       //set the address of the user
       const signer = await getProviderOrSigner(true);
-      const account = await signer.getAddress();
+      const account = await signer.listAccounts()[0];
       setAddressOfUser(account);
       setWalletConnected(true);
     } catch (err) {
