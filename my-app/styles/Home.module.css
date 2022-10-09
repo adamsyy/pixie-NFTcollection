@@ -1,9 +1,4 @@
 
-.full{
-  background-color: white;
-
-
-}
 
 .main {
   background-color: white;
@@ -27,11 +22,7 @@
   color: black;
 }
 
-.explaintitle{
-  background-color: white;
-color: black;
 
-}
 
 .image {
   width: 30%;
@@ -86,3 +77,8 @@ color: gray;
   }
 }
 
+.test{
+  background-color: white;
+color: pink
+
+}

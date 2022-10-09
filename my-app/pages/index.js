@@ -26,6 +26,28 @@ export default function Home() {
    */
   const presaleMint = async () => {
     try {
+      //make sure a wallet address can only mint one NFT
+      const provider = new providers.Web3Provider(web3ModalRef.current.cachedProvider);
+      const signer = provider.getSigner();
+      const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
+      const tokenIdsMinted = await contract.tokenIdsMinted();
+      if (tokenIdsMinted.toNumber() === 0) {
+        setLoading(true);
+        const tx = await contract.presaleMint();
+        await tx.wait();
+        setLoading(false);
+        window.alert("You successfully minted an NFT!");
+      } else {
+        alert("You can only mint one NFT");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  /**
+   * 
+      
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
@@ -376,9 +398,13 @@ export default function Home() {
 
 
 
+<div className={styles.test}>
 
+</div>
 
-
+<h2>
+  heua
+</h2>
 
 
 
