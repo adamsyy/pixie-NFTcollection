@@ -414,13 +414,6 @@ const isMinted = await contract.isMintedcheck(address_of_user);
 
 
 
-<div className={styles.test}>
-
-</div>
-
-<h2>
-  heu
-</h2>
 
 
 
