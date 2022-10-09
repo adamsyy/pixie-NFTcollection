@@ -26,6 +26,13 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     // total number of tokenIds minted
     uint256 public tokenIds;
 
+    //state variable to store the address of the users who have minted a nft
+    mapping(address => bool) public isMinted;
+  
+
+
+
+
     // Whitelist contract instance
     IWhitelist whitelist;
 
@@ -83,6 +90,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
         require(presaleStarted && block.timestamp >=  presaleEnded, "Presale has not ended yet");
         require(tokenIds < maxTokenIds, "Exceed maximum Crypto Devs supply");
         require(msg.value >= _price, "Ether sent is not correct");
+        isMinted[msg.sender] = true;
         tokenIds += 1;
         _safeMint(msg.sender, tokenIds);
     }
@@ -94,6 +102,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     function _baseURI() internal view virtual override returns (string memory) {
         return _baseTokenURI;
     }
+
 
     /**
     * @dev setPaused makes the contract paused or unpaused

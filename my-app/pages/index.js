@@ -25,29 +25,24 @@ export default function Home() {
    * presaleMint: Mint an NFT during the presale
    */
   const presaleMint = async () => {
-    try {
-      //make sure a wallet address can only mint one NFT
-      const provider = new providers.Web3Provider(web3ModalRef.current.cachedProvider);
-      const signer = provider.getSigner();
-      const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-      const tokenIdsMinted = await contract.tokenIdsMinted();
-      if (tokenIdsMinted.toNumber() === 0) {
-        setLoading(true);
-        const tx = await contract.presaleMint();
-        await tx.wait();
-        setLoading(false);
-        window.alert("You successfully minted an NFT!");
-      } else {
-        alert("You can only mint one NFT");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
-  /**
-   * 
-      
+
+//allow a user to mint nft only if isMinted state variable in the contract is false
+const signer = await getProviderOrSigner(true);
+const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
+const isMinted = await contract.isMinted();
+
+    if (isMinted) {
+      alert("You have already minted an NFT");
+      return;
+    }
+
+    try {
+
+
+
+
+
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
@@ -74,11 +69,16 @@ export default function Home() {
    */
   const publicMint = async () => {
     try {
+
+// 
+
+
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
+      
       // call the mint from the contract to mint the Crypto Dev
       const tx = await nftContract.mint({
         // value signifies the cost of one crypto dev which is "0.01" eth.
@@ -403,7 +403,7 @@ export default function Home() {
 </div>
 
 <h2>
-  heua
+  heu
 </h2>
 
 
