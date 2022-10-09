@@ -11,6 +11,6 @@ export default function handler(req, res) {
     res.status(200).json({
       name: "Crypto Dev #" + tokenId,
       description: "Crypto Dev is a collection of developers in crypto",
-      image: image_url + tokenId + ".svg",
+      image: "https://openseauserdata.com/files/0b998e2b86cdc6faa6ea18fb997b0f91.svg",
     });
   }

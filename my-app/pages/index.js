@@ -354,7 +354,7 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 className={styles.title}>Pixie Tokens!</h1>
+          <h1 className={styles.title}>Pixie test !</h1>
           <div className={styles.description}>
             Get exclsive perks by minting the pixie NFTs
           </div>
