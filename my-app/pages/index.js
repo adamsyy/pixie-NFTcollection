@@ -347,79 +347,35 @@ export default function Home() {
 
   return (
     <div>
-    <Head>
-    <div class={styles.banner}>
-  <div><a href="#" class={styles.bannerlink}></a></div>
-</div>
-      <title>Crypto Devs</title>
-      <meta name="description" content="Whitelist-Dapp" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <div className={styles.main}>
-      <div  className={styles.flex_left}>
-        <div className={styles.title}>Pixie Tokens!</div>
-        <div className={styles.description}>
-          Get exclusive perks by minting the pixie NFTs
-        </div>
-        <div className={styles.description_1}>
-          {tokenIdsMinted}/20 have been minted
-        </div>
-        {renderButton()}
-      </div>
-        <img className={styles.image} src="./mascot4.png " />
-    </div>
+      <Head>
 
 
-<div className={styles.test}>
-
-
-
-<div className={styles.sectionbottommarginwfsection}>
-      <div className={styles.container}>
-        <div className={styles.horizontalcontainer}>
-          <div className={styles.smallcontainer}>
-            <h2   className={styles.h2text}>Perks of owning a pixie token</h2>
-            <div  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</div>
-          </div>
-          <div className={styles.smallcontainer}>
-            <div className={styles.maingridfeature}><p className={styles.boldtext}>✨ 1-1 Mentorship</p>
-              <p  className={styles.textsmall1}>Get support from mentors from various fields including tech, marketing,designing etc</p>
-            </div>
-            <div  className={styles.maingridfeature}>
-              <p className={styles.boldtext}>✨Resume Reviews</p>
-              <p  className={styles.textsmall1}>Get your resume reviewed by professionals in the field</p>
-            </div>
-            <div  className={styles.maingridfeature}>
-              <p className={styles.boldtext}>✨Pre access to our events</p>
-              <p  className={styles.textsmall1}>At TinkerHub we conduct both offline and online events, being an owner of the nft gives you early access to the events</p>
-            </div>
-          </div>
-        </div>
-        <div style={{paddingTop: '50px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center'}}>
-        </div>
-      </div>
-    </div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-    <footer className={styles.footer}>
-      Made with &#10084; 
-      by Tinkerhub MEC
-    </footer>
-
-
-    
+      <div class={styles.banner}>
+    <div><a href="#" class={styles.bannerlink}></a></div>
   </div>
+  
+      </Head>
+
+      
+      <div className={styles.main}>
+        <div>
+          <h1 className={styles.title}>Welcome to Crypto Devs!</h1>
+          <div className={styles.description}>
+            Its an NFT collection for developers in Crypto.
+          </div>
+          <div className={styles.description}>
+            {tokenIdsMinted}/20 have been minted
+          </div>
+          {renderButton()}
+        </div>
+        <div>
+          <img className={styles.image} src="./cryptodevs/0.svg" />
+        </div>
+      </div>
+
+      <footer className={styles.footer}>
+        Made with &#10084; by Crypto Devs
+      </footer>
+    </div>
   );
 }
