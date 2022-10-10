@@ -18,7 +18,6 @@ export default function Home() {
   const [isOwner, setIsOwner] = useState(false);
   // tokenIdsMinted keeps track of the number of tokenIds that have been minted
   const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
-  const [address_of_user, setAddressOfUser] = useState("");
   // Create a reference to the Web3 Modal (used for connecting to Metamask) which persists as long as the page is open
   const web3ModalRef = useRef();
 
@@ -26,17 +25,7 @@ export default function Home() {
    * presaleMint: Mint an NFT during the presale
    */
   const presaleMint = async () => {
-
-
-//allow a user to mint nft only if isMinted state variable in the contract is false
-
-
     try {
-
-
-
-
-
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
@@ -62,28 +51,12 @@ export default function Home() {
    * publicMint: Mint an NFT after the presale
    */
   const publicMint = async () => {
-    const signer = await getProviderOrSigner(false);
-const contract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-//get the current account address
-// const account = await signer.getAddress();
-
-const isMinted = await contract.isMintedcheck(address_of_user);
-
-    if (isMinted) {
-      alert("You have already minted an NFT");
-      return;
-    }
     try {
-
-// 
-
-
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, signer);
-      
       // call the mint from the contract to mint the Crypto Dev
       const tx = await nftContract.mint({
         // value signifies the cost of one crypto dev which is "0.01" eth.
@@ -101,17 +74,13 @@ const isMinted = await contract.isMintedcheck(address_of_user);
   };
 
   /*
-      connectWallet: Connects the MetaMask wallet
-    */
+    connectWallet: Connects the MetaMask wallet
+  */
   const connectWallet = async () => {
     try {
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
       await getProviderOrSigner();
-      //set the address of the user
-      // const signer = await getProviderOrSigner();
-      // const account = await signer.listAccounts()[0];
-      // setAddressOfUser(account);
       setWalletConnected(true);
     } catch (err) {
       console.error(err);
@@ -180,7 +149,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       // call the presaleEnded from the contract
       const _presaleEnded = await nftContract.presaleEnded();
-      // _presaleEnded is a Big Number, so we are using the lt(less than function) instead of `<`
+      // _presaleEnded is a Big Number, so we are using the lt(less than function) insteal of `<`
       // Date.now()/1000 returns the current time in seconds
       // We compare if the _presaleEnded timestamp is less than the current time
       // which means presale has ended
@@ -260,18 +229,12 @@ const isMinted = await contract.isMintedcheck(address_of_user);
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
 
-    // If user is not connected to the Goerli network, let them know and throw an error
+    // If user is not connected to the Rinkeby network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
-    //find address of connected wallet
-
     if (chainId !== 5) {
-      window.alert("Change the network to Goerli");
-      throw new Error("Change network to Goerli");
+      window.alert("Change the network to Rinkeby");
+      throw new Error("Change network to Rinkeby");
     }
-    const signer = web3Provider.getSigner();
-    const address = await signer.getAddress();
-    setAddressOfUser(address);
-    console.log("address", address);
 
     if (needSigner) {
       const signer = web3Provider.getSigner();
@@ -289,12 +252,11 @@ const isMinted = await contract.isMintedcheck(address_of_user);
       // Assign the Web3Modal class to the reference object by setting it's `current` value
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
-        network: "goerli",
+        network: "rinkeby",
         providerOptions: {},
         disableInjectedProvider: false,
       });
       connectWallet();
-
 
       // Check if presale has started and ended
       const _presaleStarted = checkIfPresaleStarted();
@@ -323,8 +285,8 @@ const isMinted = await contract.isMintedcheck(address_of_user);
   }, [walletConnected]);
 
   /*
-      renderButton: Returns a button based on the state of the dapp
-    */
+    renderButton: Returns a button based on the state of the dapp
+  */
   const renderButton = () => {
     // If wallet is not connected, return a button which allows them to connect their wllet
     if (!walletConnected) {
@@ -377,7 +339,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
     if (presaleStarted && presaleEnded) {
       return (
         <button className={styles.button} onClick={publicMint}>
-          🚀
+          Public Mint 🚀
         </button>
       );
     }
@@ -386,78 +348,29 @@ const isMinted = await contract.isMintedcheck(address_of_user);
   return (
     <div>
       <Head>
-      <div class={styles.banner}>
-    <div><a href="#" class={styles.bannerlink}></a></div>
-  </div>
         <title>Crypto Devs</title>
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <div  className={styles.flex_left}>
-          <div className={styles.title}>Pixie Tokens!</div>
+        <div>
+          <h1 className={styles.title}>Welcome to Crypto Devs!</h1>
           <div className={styles.description}>
-            Get exclusive perks by minting the pixie NFTs
+            Its an NFT collection for developers in Crypto.
           </div>
-          <div className={styles.description_1}>
+          <div className={styles.description}>
             {tokenIdsMinted}/20 have been minted
           </div>
           {renderButton()}
         </div>
-          <img className={styles.image} src="./mascot4.png " />
-      </div>
-
-
-<div className={styles.test}>
-
-
-
-<div className={styles.sectionbottommarginwfsection}>
-        <div className={styles.container}>
-          <div className={styles.horizontalcontainer}>
-            <div className={styles.smallcontainer}>
-              <h2   className={styles.h2text}>Perks of owning a pixie token</h2>
-              <div  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</div>
-            </div>
-            <div className={styles.smallcontainer}>
-              <div className={styles.maingridfeature}><p className={styles.boldtext}>✨ 1-1 Mentorship</p>
-                <p  className={styles.textsmall1}>Get support from mentors from various fields including tech, marketing,designing etc</p>
-              </div>
-              <div  className={styles.maingridfeature}>
-                <p className={styles.boldtext}>✨Resume Reviews</p>
-                <p  className={styles.textsmall1}>Get your resume reviewed by professionals in the field</p>
-              </div>
-              <div  className={styles.maingridfeature}>
-                <p className={styles.boldtext}>✨Pre access to our events</p>
-                <p  className={styles.textsmall1}>At TinkerHub we conduct both offline and online events, being an owner of the nft gives you early access to the events</p>
-              </div>
-            </div>
-          </div>
-          <div style={{paddingTop: '50px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center'}}>
-          </div>
+        <div>
+          <img className={styles.image} src="./cryptodevs/0.svg" />
         </div>
       </div>
 
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
       <footer className={styles.footer}>
-        Made with &#10084; 
-        by Tinkerhub MEC
+        Made with &#10084; by Crypto Devs
       </footer>
-
-
-      
     </div>
   );
 }
