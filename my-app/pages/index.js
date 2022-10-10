@@ -394,12 +394,12 @@ const isMinted = await contract.isMintedcheck(address_of_user);
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <div  className={styles.fex_left}>
-          <h1 className={styles.title}>Pixie Tokens!</h1>
+        <div  className={styles.flex_left}>
+          <div className={styles.title}>Pixie Tokens!</div>
           <div className={styles.description}>
             Get exclusive perks by minting the pixie NFTs
           </div>
-          <div className={styles.description}>
+          <div className={styles.description_1}>
             {tokenIdsMinted}/20 have been minted
           </div>
           {renderButton()}
@@ -417,19 +417,19 @@ const isMinted = await contract.isMintedcheck(address_of_user);
           <div className={styles.horizontalcontainer}>
             <div className={styles.smallcontainer}>
               <h2   className={styles.h2text}>Perks of owning a pixie token</h2>
-              <p  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</p>
+              <div  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</div>
             </div>
             <div className={styles.smallcontainer}>
               <div className={styles.maingridfeature}><p className={styles.boldtext}>✨ 1-1 Mentorship</p>
-                <p  className={styles.textsmall}>Get support from mentors from various fields including tech, marketing,designing etc</p>
+                <p  className={styles.textsmall1}>Get support from mentors from various fields including tech, marketing,designing etc</p>
               </div>
               <div  className={styles.maingridfeature}>
                 <p className={styles.boldtext}>✨Resume Reviews</p>
-                <p  className={styles.textsmall}>Get your resume reviewed by professionals in the field</p>
+                <p  className={styles.textsmall1}>Get your resume reviewed by professionals in the field</p>
               </div>
               <div  className={styles.maingridfeature}>
                 <p className={styles.boldtext}>✨Pre access to our events</p>
-                <p  className={styles.textsmall}>At TinkerHub we conduct both offline and online events, being an owner of the nft gives you early access to the events</p>
+                <p  className={styles.textsmall1}>At TinkerHub we conduct both offline and online events, being an owner of the nft gives you early access to the events</p>
               </div>
             </div>
           </div>
@@ -450,11 +450,11 @@ const isMinted = await contract.isMintedcheck(address_of_user);
 
 
 
-{/* 
+
       <footer className={styles.footer}>
         Made with &#10084; 
         by Tinkerhub MEC
-      </footer> */}
+      </footer>
 
 
       
