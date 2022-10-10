@@ -397,7 +397,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
     <div>
       <Head>
       
-        <title>Crypto Devs</title>
+        <title>Tinkerhub MEC</title>
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
