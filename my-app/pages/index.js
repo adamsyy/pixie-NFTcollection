@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
+import Image from "next/image";
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
@@ -404,7 +405,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
           </div>
           {renderButton()}
         </div>
-          <img className={styles.image} src="./mascot4.png " />
+          <Image alt="test" className={styles.image} src="./mascot4.png " />
       </div>
 
 
