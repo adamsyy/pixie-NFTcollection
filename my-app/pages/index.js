@@ -297,9 +297,9 @@ const isMinted = await contract.isMintedcheck(address_of_user);
         disableInjectedProvider: false,
       });
 
-      //if metamask in not installed, show the user a message
-      if (!web3ModalRef.current.cachedProvider) {
-        window.alert("Please install MetaMask");
+      //if metamask extension is not installed, show alert 
+      if (typeof window.ethereum === 'undefined') {
+       alert("Please install MetaMask extension");
       }
     
 
@@ -412,7 +412,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
             Get exclusive perks by minting the pixie NFTs
           </div>
           <div className={styles.description_1}>
-            {tokenIdsMinted}/20 have been minted
+            {tokenIdsMinted}/10 have been minted
           </div>
           {renderButton()}
         </div>
