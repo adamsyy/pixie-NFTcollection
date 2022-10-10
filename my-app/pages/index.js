@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
+import { ethers } from "ethers";
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
@@ -75,7 +76,10 @@ const isMinted = await contract.isMintedcheck(address_of_user);
     }
     try {
 
-// 
+//allow a user to mint nft only if he has enough balance in his wallet
+
+const balance = await signer.getBalance();
+
 
 
       // We need a Signer here since this is a 'write' transaction.
@@ -273,6 +277,19 @@ const isMinted = await contract.isMintedcheck(address_of_user);
     }
     const signer = web3Provider.getSigner();
     const address = await signer.getAddress();
+    //get balance of connected wallet
+    const balance = await web3Provider.getBalance(address);
+
+  //convert balance to ether
+    const etherBalance = ethers.utils.formatEther(balance);
+    console.log("etherBalance", etherBalance);
+    //if balance is less than 0.88 ether, show alert
+    if (etherBalance < 0.088) {
+      window.alert("Insufficient funds");
+
+    }
+
+
     setAddressOfUser(address);
     console.log("address", address);
 
