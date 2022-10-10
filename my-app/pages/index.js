@@ -304,7 +304,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
 
       getTokenIdsMinted();
 
-      // Set an interval which gets called every 5 seconds to check presale has ended
+      // Set an interval which gets called every 5 seconds to check presale has ended.
       const presaleEndedInterval = setInterval(async function () {
         const _presaleStarted = await checkIfPresaleStarted();
         if (_presaleStarted) {
