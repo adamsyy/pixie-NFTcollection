@@ -413,7 +413,6 @@ const isMinted = await contract.isMintedcheck(address_of_user);
 
 
 <div className={styles.sectionbottommarginwfsection}>
-  
         <div className={styles.container}>
           <div className={styles.horizontalcontainer}>
             <div className={styles.smallcontainer}>
