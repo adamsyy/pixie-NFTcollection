@@ -11,6 +11,6 @@ export default function handler(req, res) {
     res.status(200).json({
       name: "Pixie Token #" + tokenId,
       description: "Get exclusive perks by minting the pixie NFTs",
-      image: "https://nftcollection-adamsy.vercel.app/mascot4.png",
+      image: "https://raw.githubusercontent.com/adamsyy/cryptoDevs-NFTcollection/main/my-app/public/mascot5.svg",
     });
   }
