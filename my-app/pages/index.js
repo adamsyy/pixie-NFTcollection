@@ -350,11 +350,8 @@ export default function Home() {
       <Head>
 
 
-      <div class={styles.banner}>
-    <div><a href="#" class={styles.bannerlink}></a></div>
-  </div>
-  
 
+        
         <title>Crypto Devs</title>
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
