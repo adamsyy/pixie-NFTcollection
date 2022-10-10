@@ -4,7 +4,7 @@
     const tokenId = req.query.tokenId;
     // As all the images are uploaded on github, we can extract the images from github directly.
     const image_url =
-      "https://raw.githubusercontent.com/LearnWeb3DAO/NFT-Collection/main/my-app/public/cryptodevs/";
+      "https://nftcollection-adamsy.vercel.app/mascot4.png";
     // The api is sending back metadata for a Crypto Dev
     // To make our collection compatible with Opensea, we need to follow some Metadata standards
     // when sending back the response from the api
@@ -12,6 +12,6 @@
     res.status(200).json({
       name: "Pixie Token #" + tokenId,
       description: "Get exclusive perks by minting the pixie NFTs",
-      image: image_url + tokenId + ".svg",
+      image: image_url,
     });
   }
