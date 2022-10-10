@@ -348,7 +348,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-
+      <div class={styles.banner}>
+    <div><a href="#" class={styles.bannerlink}></a></div>
+  </div>
 
 
         
