@@ -105,6 +105,9 @@ const isMinted = await contract.isMintedcheck(address_of_user);
     */
   const connectWallet = async () => {
     try {
+
+//if there is no metamask wallet installed, then it will throw an error
+
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
       await getProviderOrSigner();
@@ -293,6 +296,13 @@ const isMinted = await contract.isMintedcheck(address_of_user);
         providerOptions: {},
         disableInjectedProvider: false,
       });
+
+      //if metamask in not installed, show the user a message
+      if (!web3ModalRef.current.cachedProvider) {
+        window.alert("Please install MetaMask");
+      }
+    
+
       connectWallet();
 
 
