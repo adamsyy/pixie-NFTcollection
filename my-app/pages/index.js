@@ -320,7 +320,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
         await getTokenIdsMinted();
       }, 5 * 1000);
     }
-  });
+  }, [walletConnected]);
 
   /*
       renderButton: Returns a button based on the state of the dapp
