@@ -425,7 +425,7 @@ const isMinted = await contract.isMintedcheck(address_of_user);
               </div>
               <div  className={styles.maingridfeature}>
                 <p className={styles.boldtext}>✨Resume Reviews</p>
-                <p  className={styles.textsmall}>Get your resume reviewed by professionals in the field.</p>
+                <p  className={styles.textsmall}>Get your resume reviewed by professionals in the field</p>
               </div>
               <div  className={styles.maingridfeature}>
                 <p className={styles.boldtext}>✨Pre access to our events</p>
