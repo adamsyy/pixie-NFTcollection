@@ -348,9 +348,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-      <div class={styles.banner}>
-    <div><a href="#" class={styles.bannerlink}></a></div>
-  </div>
+
 
 
         
@@ -358,6 +356,11 @@ export default function Home() {
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div class={styles.banner}>
+    <div><a href="#" class={styles.bannerlink}></a></div>
+  </div>
+
       <div className={styles.main}>
         <div>
           <h1 className={styles.title}>Welcome to Crypto Devs!</h1>
