@@ -6,4 +6,5 @@ A platform to mint pixie tokens
 
 Tech stacks : Solidity, NextJs </br>
 A fun project by @adamsyy </br>
+Hardwork by @jaison080
 Artwork by @JezwinThomas
