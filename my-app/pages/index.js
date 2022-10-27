@@ -449,7 +449,7 @@ const balance = await signer.getBalance();
               <div  className={styles.textsmall}>An NFT is nothing but a signed piece of data that has an owner. The data, in almost every case, is digital and therefore absolutely duplicable. The only component of an NFT that is not duplicable is the signature.</div>
             </div>
             <div className={styles.smallcontainer}>
-              <div className={styles.maingridfeature}><p className={styles.boldtext}>✨ Free parkings on sundat=ys</p>
+              <div className={styles.maingridfeature}><p className={styles.boldtext}>✨ Free parkings on sundays</p>
                 <p  className={styles.textsmall1}>Get exclusive advantages with free services</p>
               </div>
               <div  className={styles.maingridfeature}>
